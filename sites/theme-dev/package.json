@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "theme-dev",
+  "version": "0.0.1",
+  "description": "A site meant only for developing the docs theme.",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.15.35",
+    "gatsby-theme-docs": "*",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "main": "gatsby-config.js",
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+# Honkify.js
+
+Need a little more chaos in your life? Inspired by [_Untitled Goose Game_](https://goose.game), you can now set a goose loose on your site to act like a jerk.
+
+When activated, all links on the site will stop working, instead triggering a “honk!” sound effect.
+
+Honk. Honk honk honk.
+
+- [See the source code](https://github.com/jlengstorf/honkify)
+
+## Praise for Honkify.js
+
+> Nobody asked for this. – [Jessica Tremblay](https://twitter.com/poofichu/status/1179146980569878528)
+
+> This is the worst thing you have ever done. – [E.J. Mason](https://twitter.com/codeability/status/1179136560110768128)
+
+## Installation and Quick Start
+
+```
+yarn add honkify
+```
+
+In your code:
+
+```js
+import honkify from 'honkify';
+
+// The goose is loose!
+const unregister = honkify();
+
+// Disable so links work again
+unregister();
+```
+
+## How to use this on a React site
+
+```jsx
+import React, { useState } from 'react';
+import honkify from 'honkify';
+
+const Honker = () => {
+  const initialState = { active: false, unregister: () => {} };
+  const [honk, setHonk] = useState(initialState);
+  const toggleHonk = () => {
+    if (!honk.active) {
+      const unregister = honkify();
+      setHonk({ active: true, unregister });
+    }
+
+    if (honk.active) {
+      honk.unregister();
+      setHonk(initialState);
+    }
+  };
+
+  return (
+    <button onClick={toggleHonk}>{honk.active ? 'unhonk' : 'honk!'}</button>
+  );
+};
+
+export default Honker;
+```
+
+## Disclaimer: please don’t use this
+
+Or, if you do, make sure it’s easy to toggle off. Geese may be jerks, but developers shouldn’t be.

@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "negronis",
+  "version": "0.0.1",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@jlengstorf/gatsby-theme-events": "^1.0.1",
+    "@mdx-js/react": "^1.5.0",
+    "@theme-ui/presets": "^0.2.42",
+    "gatsby": "^2.15.28",
+    "gatsby-image": "^2.2.23",
+    "gatsby-plugin-theme-ui": "^0.2.43",
+    "gatsby-source-filesystem": "^2.1.28",
+    "gatsby-theme-docs": "*",
+    "gatsby-transformer-cloudinary": "^0.3.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "theme-ui": "^0.2.43"
+  },
+  "main": "gatsby-config.js",
+  "license": "MIT"
+}

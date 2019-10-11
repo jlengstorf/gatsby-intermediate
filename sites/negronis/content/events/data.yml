@@ -1,0 +1,17 @@
+- name: Cocktail Making Class
+  location: Rum Club, Portland OR
+  start_date: 2019-10-30
+  end_date: 2019-10-30
+  url: http://rumclubpdx.com/
+
+- name: Happy Hour
+  location: Hey Love, Portland OR
+  start_date: 2019-11-14
+  end_date: 2019-11-14
+  url: https://www.heylovepdx.com/
+
+- name: Try Something New
+  location: Angel Face, Portland OR
+  start_date: 2019-11-22
+  end_date: 2019-11-22
+  url: https://www.angelfaceportland.com/

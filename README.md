@@ -21,6 +21,9 @@ A Frontend Masters workshop.
 - Create the `packages/gatsby-theme-docs` folder
   - `yarn init`
   - Create `index.js` (`// boop`)
+- Install the docs theme
+  - `yarn workspace negronis add "gatsby-theme-docs@*"` (quotes for Windows)
+  - Add default config to `gatsby-config.js`
 - Make sure the content directory exists (`onPreBootstrap`)
   - `yarn add mkdirp`
   - Validate that this works by starting the `theme-dev` site in `develop` mode
@@ -42,6 +45,7 @@ A Frontend Masters workshop.
   - Write a GraphQL query in GraphiQL first
 - Add Theme UI
   - `yarn workspace gatsby-theme-docs add theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react`
+  - Update `gatsby-config.js`
   - Add a theme file (`src/gatsby-plugin-theme-ui/index.js`)
   - Update `Layout` to use Theme UI
   - Update `DocsPage` to use Theme UI
@@ -57,22 +61,74 @@ A Frontend Masters workshop.
   - Add a scope file for easy shadowing
   - Update `Code` to use `react-live`
 
-## Part II: Build a Negroni Fan Site
+## Part II: Honkify
 
-- 
+- Install the docs theme
+  - `yarn workspace negronis add "gatsby-theme-docs@*"` (quotes for Windows)
+  - Update `gatsby-config.js` with custom basePath and disable theme MDX
+  - The existing theme from the Honkify site will automatically override the docs Theme UI config
+  - Shadow the `Layout` component
+- Create a `Button` component (`src/components/button.js`)
+  - Shadow the `scope.js` file to add `Button`
+  - Add the `Button` component in a live-editable code block in the docs
+  - Show it interacting with Honkify
 
-### What’s already in the repo?
+## Part III: Build a Negroni Fan Site
 
-1. Negroni Appreciation
-  - All `content`
-  - All `src/images`
-  - Content in `pages`, but not images
+- Add Theme UI
+  - `yarn workspace negronis add theme-ui gatsby-plugin-theme-ui @emotion/core @mdx-js/react`
+  - Add a preset (`yarn workspace negronis add @theme-ui/presets`)
+  - Create a theme file (`src/gatsby-plugin-theme-ui/index.js`)
+- Create a `Layout` component (`src/components/layout.js`)
+  - Update `src/pages/index.js` to use the `Layout`
+  - Update `src/pages/history.js` to use the `Layout`
+  - Add styles for a hollow button
+- Add image support
+  - `yarn workspace negronis add gatsby-source-filesystem gatsby-transformer-cloudinary gatsby-image`
+  - Get credentials from Cloudinary
+  - Add env vars to `.env.development`
+  - Load env vars in `gatsby-config.js`
+  - Add plugin config to `gatsby-config.js`
+  - Query for images
+    - Show this in GraphiQL first
+  - Update `src/pages/index.js` to display an image
+    - Quick aside to show transformations with Cloudinary because they’re dope
+  - Update `src/pages/history.js` to display an image
+- Install the docs theme
+  - Recipes are a kind of documentation! :)
+  - `yarn workspace negronis add "gatsby-theme-docs@*"` (quotes for Windows)
+  - Add modified config to `gatsby-config.js`
+    - `basePath: '/recipes'`
+    - `contentPath: 'content/recipes'`
+- Update `src/pages/index.js` to link to `/recipes`
+  - Add styles for a primary button
+- Shadow the `Layout` component in the docs theme
+- Shadow the `TableOfContents` component in the docs theme
+- Install the events theme
+  - `yarn workspace negronis add @jlengstorf/gatsby-theme-events`
+  - This was built as part of this free course on authoring Gatsby themes: https://egghead.io/courses/gatsby-theme-authoring
+  - Update `gatsby-config.js` with a custom basePath and contentPath
+  - Shadow the `Layout` component in the events theme
 
-1. Honkify
-  - `src/pages/index.mdx` with all content
-  - `docs` content, but without the `react-live` code snippets
-  - MDX plugin
+## Part IV: Rick & Morty Lookup App
 
-### Site One Workflow
+- Add support for client-side GraphQL queries
+  - `yarn workspace lookup add gatsby-plugin-apollo @apollo/react-common @apollo/react-hooks graphql-tag`
+  - Update `gatsby-config.js` to use `gatsby-plugin-apollo`
+  - Point Apollo at the Rick & Morty API (https://rickandmortyapi.com/graphql/)
+- Create pages
+  - `src/pages/index.js`
+  - `src/pages/search.js`
+- Add support for client-only routes
+  - `gatsby-node.js` (`onCreatePage`/`matchPath`)
+  - Add a redirect `netlify.toml`
+  - Test using `netlify dev`
+- Create a search form
+  - React hooks
+  - Programmatic navigation
+  - Add a submit handler
+- Create a results component
+  - Query based on the current search string
+- Figure out the search string from state or URL
+  - `location`
 
-1. Set up MDX for the home page

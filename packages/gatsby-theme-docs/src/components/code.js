@@ -41,7 +41,7 @@ const Code = props => {
         <pre
           className={className}
           style={style}
-          sx={{ p: 2, variant: 'prism-highlight' }}
+          sx={{ p: 2, overflowX: 'scroll', variant: 'prism-highlight' }}
         >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>

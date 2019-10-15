@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 
 export const query = graphql`
   query {
-    image: file(name: { eq: "negroni-geoff-peters" }) {
+    image: file(name: { eq: "negroni-nuff" }) {
       cloudinary: childCloudinaryAsset {
         fluid {
           ...CloudinaryAssetFluid
@@ -20,13 +20,13 @@ const History = ({ data }) => (
     <Image fluid={data.image.cloudinary.fluid} alt="Negroni." />
     <h1>The History of the Negroni</h1>
     <p>
-      The Negroni is a variation on a classic coctail called an Americano, which
-      is a mix of Campari, sweet vermouth, and club soda.
+      The Negroni is a variation on a classic cocktail called an Americano,
+      which is a mix of Campari, sweet vermouth, and club soda.
     </p>
     <p>
-      In 1919, Count Camillo Negroni was on the hunt for a stiff drink. His work
-      as a rodeo clown in the American Wild West had given him a taste for
-      stronger stuff than the average Italian bartender had to offer.
+      According to legend, in 1919 in Florence, Italy, Count Negroni was on the
+      hunt for a drink a little stiffer than the average Italian caffé had to
+      offer.
     </p>
     <p>
       At the count’s request, a Florence bartender swapped out the club soda in
@@ -44,28 +44,7 @@ const History = ({ data }) => (
     <hr />
     <p>
       <small>
-        Photo by{' '}
-        <a rel="nofollow" href="https://www.flickr.com/people/54359128@N00">
-          Geoff Peters
-        </a>{' '}
-        from Vancouver, BC, Canada -{' '}
-        <a
-          rel="nofollow"
-          href="https://www.flickr.com/photos/54359128@N00/3383453027/"
-        >
-          Negroni (drink)
-        </a>
-        ,{' '}
-        <a
-          href="https://creativecommons.org/licenses/by/2.0"
-          title="Creative Commons Attribution 2.0"
-        >
-          CC BY 2.0
-        </a>
-        ,{' '}
-        <a href="https://commons.wikimedia.org/w/index.php?curid=9572176">
-          Link
-        </a>
+        Photo by <a href="https://unsplash.com/@nuff">Nuff on Unsplash</a>
       </small>
     </p>
   </Layout>

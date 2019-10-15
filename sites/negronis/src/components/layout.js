@@ -39,6 +39,7 @@ const Layout = ({ children }) => (
         my: 4,
         mx: 'auto',
         maxWidth: 650,
+        width: '90vw',
       }}
     >
       {children}

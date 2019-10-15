@@ -34,7 +34,7 @@ export default {
         bg: 'secondary',
       },
     },
-    secondary: {
+    hollow: {
       ...buttonDefaults,
       bg: 'background',
       color: 'primary',

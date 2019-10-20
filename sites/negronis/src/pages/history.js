@@ -1,23 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import Layout from '../components/layout';
 
-export const query = graphql`
-  query {
-    image: file(name: { eq: "negroni-nuff" }) {
-      cloudinary: childCloudinaryAsset {
-        fluid {
-          ...CloudinaryAssetFluid
-        }
-      }
-    }
-  }
-`;
-
-const History = ({ data }) => (
-  <Layout>
-    <Image fluid={data.image.cloudinary.fluid} alt="Negroni." />
+const History = () => (
+  <>
     <h1>The History of the Negroni</h1>
     <p>
       The Negroni is a variation on a classic cocktail called an Americano,
@@ -47,7 +31,7 @@ const History = ({ data }) => (
         Photo by <a href="https://unsplash.com/@nuff">Nuff on Unsplash</a>
       </small>
     </p>
-  </Layout>
+  </>
 );
 
 export default History;

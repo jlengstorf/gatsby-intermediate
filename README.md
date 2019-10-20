@@ -2,17 +2,19 @@
 
 A Frontend Masters workshop.
 
-## Plan
+## Setup
 
-- Two sites (simple marketing)
-- Create a theme for adding docs
-  - MDX
-  - Create a ToC from the filesystem
-  - Live editable components
-- Install on both sites
-- Show the power of theme-ui to auto-inherit
-- Shadow on one to show how that works
-- Add a second theme for FAQs
+Clone this repo locally:
+
+```
+git clone git@github.com:jlengstorf/gatsby-intermediate.git
+```
+
+Make sure you’re on the `start` branch:
+
+```
+git checkout start
+```
 
 ## Part I: Create a Docs Theme
 

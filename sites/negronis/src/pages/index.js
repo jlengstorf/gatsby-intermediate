@@ -30,6 +30,9 @@ const Index = ({ data }) => (
     <Link to="/history" sx={{ variant: 'button.hollow', ml: 3 }}>
       Learn the History
     </Link>
+    <Link to="/events" sx={{ variant: 'button.hollow', ml: 3 }}>
+      Upcoming Events
+    </Link>
   </Layout>
 );
 

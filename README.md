@@ -18,6 +18,10 @@ git checkout start
 
 ## Part I: Create a Docs Theme
 
+### Set up the workspace
+
+Diff: https://github.com/jlengstorf/gatsby-intermediate/compare/20843e9...d50445f
+
 - Create the `packages/gatsby-theme-docs` folder
   - `yarn init`
   - Create `index.js` (`// boop`)
@@ -31,9 +35,19 @@ git checkout start
 - Install the docs theme
   - `yarn workspace theme-dev add "gatsby-theme-docs@*"` (quotes for Windows)
   - Add default config to `gatsby-config.js`
+
+### Pre-bootstrap
+
+Diff: 
+
+- Add a utility helper to ensure default options are set
+  - `utils/default-options.js`
 - Make sure the content directory exists (`onPreBootstrap`)
-  - `yarn add mkdirp`
+  - `yarn workspace gatsby-theme-docs add mkdirp`
   - Validate that this works by starting the `theme-dev` site in `develop` mode
+
+### Schema customization
+
 - Define the docs data type (`createSchemaCustomization`)
   - Show this data type in GraphiQL
   - Run a query to show it returning an empty array

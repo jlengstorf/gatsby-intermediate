@@ -75,3 +75,32 @@ exports.createResolvers = ({ createResolvers }) => {
     },
   });
 };
+
+exports.createPages = async ({ actions, graphql, reporter }, options) => {
+  const result = await graphql(`
+    query {
+      allDocsPage {
+        nodes {
+          id
+          path
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('error loading docs', result.errors);
+  }
+
+  const pages = result.data.allDocsPage.nodes;
+
+  pages.forEach(page => {
+    actions.createPage({
+      path: page.path,
+      component: require.resolve('./src/templates/docs-page-template.js'),
+      context: {
+        pageID: page.id,
+      },
+    });
+  });
+};

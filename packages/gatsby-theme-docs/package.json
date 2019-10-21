@@ -5,10 +5,13 @@
   "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
   "license": "MIT",
   "dependencies": {
+    "@emotion/core": "^10.0.21",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "gatsby-plugin-mdx": "^1.0.52",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-source-filesystem": "^2.1.33",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "theme-ui": "^0.2.44"
   }
 }

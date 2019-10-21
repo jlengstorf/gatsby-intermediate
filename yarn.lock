@@ -2859,6 +2859,14 @@ clone-response@1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
+cloudinary@^1.15.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.16.0.tgz#d2254a04fc0cacf3cae4ec8fce2005c82e6dc78a"
+  integrity sha512-Tna7JsQ9Drssn/Su3AcTzozDuqMFlY5bIj/476AJMechquxeOEcLF0z5ucUtkAd1N3tR9ndLvVszz7anG6Zp4Q==
+  dependencies:
+    lodash "^4.17.11"
+    q "^1.5.1"
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -5084,6 +5092,15 @@ gatsby-graphiql-explorer@^0.2.25:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
+gatsby-image@^2.2.29:
+  version "2.2.29"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.29.tgz#cea897166b0029968b1c9c5d55f31af05a59e8f2"
+  integrity sha512-QpF5EBE6N0E13FyencBTmYopFEqb30MYlY7eFNvN7dAOSa6Nl218ey92xYo8b0L8uCPcAaD/uTiNK4WPXxc6DA==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    object-fit-images "^3.2.4"
+    prop-types "^15.7.2"
+
 gatsby-link@^2.2.20:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.20.tgz#fe04e507053e8762dc91736172ee3cee17a64b89"
@@ -5334,6 +5351,15 @@ gatsby-telemetry@^1.1.33:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.3.3"
+
+gatsby-transformer-cloudinary@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-cloudinary/-/gatsby-transformer-cloudinary-0.3.0.tgz#ad695862b319f87f1931bca31da6a737130164a2"
+  integrity sha512-C8UzeOmKeSygqH7s54WUNAm/mOUBVofnWNhjygQUSWbgnKDTv9Twae6IUHxp6zr3k8KtLuC5HyUpyK7ksFPBzw==
+  dependencies:
+    axios "^0.19.0"
+    cloudinary "^1.15.0"
+    fs-extra "^8.1.0"
 
 gatsby@^2.15.28:
   version "2.15.35"
@@ -8287,6 +8313,11 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-fit-images@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
+  integrity sha512-G+7LzpYfTfqUyrZlfrou/PLLLAPNC52FTy5y1CBywX+1/FkxIloOyQXBmZ3Zxa2AWO+lMF0JTuvqbr7G5e5CWg==
+
 object-hash@^1.1.4:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
@@ -9460,7 +9491,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-q@^1.1.2:
+q@^1.1.2, q@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=

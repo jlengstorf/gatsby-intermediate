@@ -1,0 +1,17 @@
+{
+  "name": "theme-dev",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.16.5",
+    "gatsby-theme-docs": "*",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}

@@ -18,13 +18,18 @@ git checkout start
 
 ## Part I: Create a Docs Theme
 
-- Set up Yarn workspaces
-- Create a site for theme dev
 - Create the `packages/gatsby-theme-docs` folder
   - `yarn init`
   - Create `index.js` (`// boop`)
+- Create a site for theme dev
+  - Create folder
+  - `yarn init`
+  - `yarn add gatsby react react-dom`
+- Set up Yarn workspaces
+  - Create a `package.json` in the workspace root
+  - `yarn workspaces info`
 - Install the docs theme
-  - `yarn workspace negronis add "gatsby-theme-docs@*"` (quotes for Windows)
+  - `yarn workspace theme-dev add "gatsby-theme-docs@*"` (quotes for Windows)
   - Add default config to `gatsby-config.js`
 - Make sure the content directory exists (`onPreBootstrap`)
   - `yarn add mkdirp`

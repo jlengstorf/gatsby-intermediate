@@ -8,5 +8,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.16.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   }
 }

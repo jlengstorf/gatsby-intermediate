@@ -1,13 +1,5 @@
----
-title: Home
----
-
-These are docs!
-
-```js
 import Code from '../components/code';
 
 export default {
   pre: Code,
 };
-```

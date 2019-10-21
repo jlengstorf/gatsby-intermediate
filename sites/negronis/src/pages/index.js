@@ -24,7 +24,10 @@ const Index = ({ data }) => (
       A Negroni, while simple, is a beautifully complex cocktail with endless
       opportunities to experiment with flavors.
     </p>
-    <Link to="/history" sx={{ variant: 'button.hollow' }}>
+    <Link to="/recipes" sx={{ variant: 'button.primary' }}>
+      See Recipes
+    </Link>
+    <Link to="/history" sx={{ variant: 'button.hollow', ml: 3 }}>
       Learn the History
     </Link>
   </Layout>

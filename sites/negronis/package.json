@@ -15,6 +15,7 @@
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-theme-docs": "*",
     "gatsby-transformer-cloudinary": "^0.3.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",

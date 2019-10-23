@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from './layout';
+import TableOfContents from './table-of-content';
 
 const DocsPage = ({ page }) => (
   <Layout>
@@ -18,6 +19,7 @@ const DocsPage = ({ page }) => (
     >
       This page was updated {page.updated}.
     </p>
+    <TableOfContents />
   </Layout>
 );
 

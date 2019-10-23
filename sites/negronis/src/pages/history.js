@@ -1,8 +1,23 @@
 import React from 'react';
 import Layout from '../components/layout';
+import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-const History = () => (
+export const query = graphql`
+  query {
+    image: file(name: { eq: "negroni-nuff" }) {
+      cloudinary: childCloudinaryAsset {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
+    }
+  }
+`;
+
+const History = ({ data }) => (
   <Layout>
+    <Image fluid={data.image.cloudinary.fluid} alt="Negroni." />
     <h1>The History of the Negroni</h1>
     <p>
       The Negroni is a variation on a classic cocktail called an Americano,

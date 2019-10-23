@@ -1,7 +1,8 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 const History = () => (
-  <>
+  <Layout>
     <h1>The History of the Negroni</h1>
     <p>
       The Negroni is a variation on a classic cocktail called an Americano,
@@ -31,7 +32,7 @@ const History = () => (
         Photo by <a href="https://unsplash.com/@nuff">Nuff on Unsplash</a>
       </small>
     </p>
-  </>
+  </Layout>
 );
 
 export default History;

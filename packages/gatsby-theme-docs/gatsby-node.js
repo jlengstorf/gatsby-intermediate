@@ -1,12 +1,13 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
 const fs = require('fs');
+const mkdirp = require('mkdirp');
 const withDefaults = require('./utils/default-options');
 
 exports.onPreBootstrap = ({ store }, options) => {
   const { program } = store.getState();
   const { contentPath } = withDefaults(options);
   const dir = path.join(program.directory, contentPath);
+
   if (!fs.existsSync(dir)) {
     mkdirp.sync(dir);
   }
@@ -15,21 +16,20 @@ exports.onPreBootstrap = ({ store }, options) => {
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type DocsPage implements Node @dontInfer {
-        id: ID!
-        title: String!
-        path: String!
-        updated: Date! @dateformat
-        body: String!
+      id: ID!
+      title: String!
+      path: String!
+      updated: Date! @dateformat
+      body: String!
     }
- `);
+  `);
 };
 
 exports.onCreateNode = ({ node, actions, getNode, createNodeId }, options) => {
   const { basePath } = withDefaults(options);
   const parent = getNode(node.parent);
 
-  //only work on MDX files that were loaded by this theme
-
+  // Only work on MDX files that were loaded by this theme
   if (
     node.internal.type !== 'Mdx' ||
     parent.sourceInstanceName !== 'gatsby-theme-docs'
@@ -37,8 +37,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId }, options) => {
     return;
   }
 
-  // Treat `index.mdx` link `index.htmll` (i.e `docs/` vs `docs/)
-
+  // Treat `index.mdx` link `index.html` (i.e. `docs/` vs. `docs/index/`).
   const pageName = parent.name !== 'index' ? parent.name : '';
 
   actions.createNode({
@@ -60,8 +59,7 @@ exports.createResolvers = ({ createResolvers }) => {
       body: {
         type: 'String!',
         resolve: (source, args, context, info) => {
-          //Load the resolvers for the 'Mdx` type `body` field.
-
+          // Load the resolver for the `Mdx`type `body` field.
           const type = info.schema.getType('Mdx');
           const mdxFields = type.getFields();
           const resolver = mdxFields.body.resolve;
@@ -76,4 +74,32 @@ exports.createResolvers = ({ createResolvers }) => {
     },
   });
 };
-//little comment
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allDocsPage {
+        nodes {
+          id
+          path
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('error loading docs', result.errors);
+  }
+
+  const pages = result.data.allDocsPage.nodes;
+
+  pages.forEach(page => {
+    actions.createPage({
+      path: page.path,
+      component: require.resolve('./src/templates/docs-page-template.js'),
+      context: {
+        pageID: page.id,
+      },
+    });
+  });
+};

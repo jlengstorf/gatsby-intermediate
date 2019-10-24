@@ -1,4 +1,5 @@
 const withDefaults = require('./utils/default-options');
+
 module.exports = options => {
   const { contentPath, useExternalMDX } = withDefaults(options);
 
@@ -19,6 +20,7 @@ module.exports = options => {
           },
         },
       },
+      'gatsby-plugin-theme-ui',
     ].filter(Boolean),
   };
 };

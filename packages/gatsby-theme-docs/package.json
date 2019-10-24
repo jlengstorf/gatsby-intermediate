@@ -1,14 +1,20 @@
 {
   "name": "gatsby-theme-docs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
+  "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
   "license": "MIT",
-  "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.21",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
-    "gatsby-plugin-mdx": "^1.0.53",
+    "gatsby-plugin-mdx": "^1.0.52",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-source-filesystem": "^2.1.33",
-    "mkdirp": "^0.5.1"
+    "mdx-utils": "^0.2.0",
+    "mkdirp": "^0.5.1",
+    "prism-react-renderer": "^1.0.2",
+    "react-live": "^2.2.1",
+    "theme-ui": "^0.2.44"
   }
 }

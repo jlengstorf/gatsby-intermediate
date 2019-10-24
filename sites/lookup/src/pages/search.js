@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../../components/form';
+import Results from '../../components/results';
 
 const Index = () => (
   <>
@@ -9,7 +10,7 @@ const Index = () => (
       interface
     </p>
     <Form />
-    {/* TODO Add results */}
+    <Results name="rick" />
   </>
 );
 

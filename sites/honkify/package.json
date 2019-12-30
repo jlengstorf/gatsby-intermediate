@@ -8,7 +8,7 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.17",
+    "@emotion/core": "*",
     "@mdx-js/mdx": "^1.5.0",
     "@mdx-js/react": "^1.5.0",
     "@theme-ui/prism": "^0.2.40",

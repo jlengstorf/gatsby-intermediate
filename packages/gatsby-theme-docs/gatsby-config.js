@@ -16,7 +16,7 @@ module.exports = options => {
         resolve: 'gatsby-plugin-mdx',
         options: {
           defaultLayouts: {
-            default: require.resolve('./'),
+            default: require.resolve('./src/components/index.js'),
           },
         },
       },

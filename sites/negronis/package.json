@@ -8,9 +8,14 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@mdx-js/react": "^1.5.8",
+    "@theme-ui/presets": "^0.3.0",
     "gatsby": "^2.15.28",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "react": "^16.10.1",
-    "react-dom": "^16.10.1"
+    "react-dom": "^16.10.1",
+    "theme-ui": "^0.3.1"
   },
   "main": "gatsby-config.js",
   "license": "MIT"

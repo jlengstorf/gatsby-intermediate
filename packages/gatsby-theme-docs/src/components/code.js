@@ -3,6 +3,8 @@ import { jsx } from 'theme-ui';
 import { preToCodeBlock } from 'mdx-utils';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/nightOwl';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import scope from '../scope';
 
 const Code = props => {
   const codeProps = preToCodeBlock(props);
@@ -12,7 +14,22 @@ const Code = props => {
   }
 
   const { codeString, language } = codeProps;
-  return (
+  return codeProps['react-live'] ? (
+    <LiveProvider code={codeString} scope={scope} theme={theme}>
+      <LiveEditor />
+      <LiveError />
+      <LivePreview
+        sx={{
+          border: theme => `1px solid ${theme.colors.muted}`,
+          p: 4,
+          'div :first-child': {
+            mt: 0,
+          },
+          variant: 'react-live',
+        }}
+      />
+    </LiveProvider>
+  ) : (
     <Highlight
       {...defaultProps}
       code={codeString}

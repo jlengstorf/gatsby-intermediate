@@ -19,6 +19,14 @@ git checkout start
 ## Part I: Create a Docs Theme
 
 - Set up Yarn workspaces
+
+### Read first
+
+https://classic.yarnpkg.com/en/docs/workspaces/
+https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/
+https://classic.yarnpkg.com/en/docs/selective-version-resolutions
+https://github.com/gatsbyjs/gatsby/issues/19827
+
 - Create a site for theme dev
 - Create the `packages/gatsby-theme-docs` folder
   - `yarn init`
@@ -133,4 +141,3 @@ git checkout start
   - Query based on the current search string
 - Figure out the search string from state or URL
   - `location`
-

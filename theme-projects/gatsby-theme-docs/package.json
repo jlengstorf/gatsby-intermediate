@@ -1,0 +1,8 @@
+{
+	"name": "gatsby-theme-docs",
+	"version": "1.0.0",
+	"description": "Starting practice gatsby theme",
+	"main": "index.js",
+	"author": "david.pineda@free4m.io",
+	"license": "MIT"
+}

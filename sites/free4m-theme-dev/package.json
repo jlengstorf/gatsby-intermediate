@@ -1,0 +1,18 @@
+{
+	"name": "free4m-theme-dev",
+	"version": "1.0.0",
+	"description": "Sandbox site for Gatsby theme dev and integration",
+	"main": "index.js",
+	"author": "david.pineda@free4m.io",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"develop": "gatsby develop"
+	},
+	"dependencies": {
+		"gatsby": "^2.20.12",
+		"gatsby-theme-docs": "*",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	}
+}

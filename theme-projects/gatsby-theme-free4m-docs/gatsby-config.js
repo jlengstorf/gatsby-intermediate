@@ -20,6 +20,6 @@ module.exorts = (options) => {
 					},
 				},
 			},
-		],
+		].filter(Boolean),
 	};
 };

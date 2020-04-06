@@ -5,6 +5,9 @@
 	"main": "gatsby-config.js",
 	"author": "david.pineda@free4m.io",
 	"license": "MIT",
+	"devDependencies": {
+		"mkdirp": "^1.0.4"
+	},
 	"peerDependencies": {
 		"gatsby": "2.18.17",
 		"react": "16.12.0",

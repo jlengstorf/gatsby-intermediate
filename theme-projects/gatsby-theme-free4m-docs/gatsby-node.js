@@ -26,3 +26,26 @@ exports.createSchemaCustomization = ({actions}) => {
 	}
  `);
 };
+
+// DEFINITION FOR CREATED NODES TO GQL DATA LAYER
+exports.onCreateNode = ({node, actions, getNode, createNodeId}, options) => {
+	const {basePath} = withDefaults(options);
+	const parent = getNode(node.parent);
+
+	// Only MDX files that are loaded by this theme
+	let nodeIsMDXFile = node.internal.type === 'Mdx';
+	let nodeIsLoadedByDocsThemeContext =
+		parent.sourceInstanceName === 'gatsby-theme-free4m-docs';
+
+	if (nodeIsMDXFile || nodeIsLoadedByDocsThemeContext) {
+		// Account for index doc file
+		let pageName = parent.name !== 'index' ? parent.name : '';
+
+		actions.createNode({
+			id: createNodeId(`DocsPage-${node.id}`),
+			title: node.frontmatter || parent.name,
+			path: path.join('/', basePath, parent.relativeDirectory, pageName),
+			updated: parent.modifiedTime,
+		});
+	}
+};

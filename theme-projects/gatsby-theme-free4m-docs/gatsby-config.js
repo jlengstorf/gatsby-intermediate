@@ -16,7 +16,7 @@ module.exorts = (options) => {
 				resolve: 'gatsby-plugin-mdx',
 				options: {
 					defaultLayouts: {
-						default: require.resolve('./src/components/layout.js'),
+						default: require.resolve('./src/components/layout/doc.js'),
 					},
 				},
 			},

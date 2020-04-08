@@ -35,6 +35,8 @@ exports.onCreateNode = ({node, actions, getNode, createNodeId}, options) => {
 	// Only MDX files that are loaded by this theme
 	let nodeIsMDXFile = node.internal.type === 'Mdx';
 	let nodeIsLoadedByDocsThemeContext =
+		parent &&
+		parent.sourceInstanceName &&
 		parent.sourceInstanceName === 'gatsby-theme-free4m-docs';
 
 	if (nodeIsMDXFile || nodeIsLoadedByDocsThemeContext) {

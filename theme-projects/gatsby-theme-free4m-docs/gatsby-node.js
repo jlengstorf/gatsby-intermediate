@@ -29,6 +29,8 @@ exports.createSchemaCustomization = ({actions}) => {
 
 // DEFINITION FOR CREATED NODES TO GQL DATA LAYER
 exports.onCreateNode = ({node, actions, getNode, createNodeId}, options) => {
+	// console.log('>> ON CREATE NODE:', node);
+
 	const {basePath} = withDefaults(options);
 	const parent = getNode(node.parent);
 
@@ -40,14 +42,23 @@ exports.onCreateNode = ({node, actions, getNode, createNodeId}, options) => {
 		parent.sourceInstanceName === 'gatsby-theme-free4m-docs';
 
 	if (nodeIsMDXFile || nodeIsLoadedByDocsThemeContext) {
+		console.log('\n> FOUND A DOCS NODE!!! < \n\n', node);
 		// Account for index doc file
 		let pageName = parent.name !== 'index' ? parent.name : '';
 
 		actions.createNode({
+			// SYSTEM
 			id: createNodeId(`DocsPage-${node.id}`),
-			title: node.frontmatter || parent.name,
+			parent: node.id,
+			internal: {
+				type: 'DocsPage',
+				contentDigest: node.internal.contentDigest,
+			},
+			// CUSTOM
+			title: node.frontmatter.title || parent.name,
 			path: path.join('/', basePath, parent.relativeDirectory, pageName),
 			updated: parent.modifiedTime,
+			//
 		});
 	}
 };

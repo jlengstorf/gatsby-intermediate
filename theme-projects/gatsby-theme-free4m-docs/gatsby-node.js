@@ -62,3 +62,27 @@ exports.onCreateNode = ({node, actions, getNode, createNodeId}, options) => {
 		});
 	}
 };
+
+// DEFINE A CUSTOM RESOLVER FOR THE DOC POST BODY
+exports.createResolvers = ({createResolvers}) => {
+	createResolvers({
+		DocsPage: {
+			body: {
+				type: 'String!',
+				resolve: (source, args, context, info) => {
+					const type = info.schema.getType('Mdx');
+					const mdxFields = type.getFields();
+					const resolver = mdxFields.body.resolve;
+
+					const mdxNode = context.nodeModel.getNodeById({
+						id: source.parent,
+					});
+
+					return resolver(mdxNode, args, context, {
+						fieldName: 'body',
+					});
+				},
+			},
+		},
+	});
+};

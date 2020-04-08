@@ -86,3 +86,33 @@ exports.createResolvers = ({createResolvers}) => {
 		},
 	});
 };
+
+// CREATE PAGES
+exports.createPages = async ({actions, graphql, reporter}) => {
+	const result = await graphql(`
+		query {
+			allDocsPage {
+				nodes {
+					id
+					path
+				}
+			}
+		}
+	`);
+
+	if (result.errors) {
+		reporter.panic('<!> Error loading Docs <!>', result.errors);
+	}
+
+	const pages = result.data.allDocsPage.nodes;
+
+	pages.forEach((page) => {
+		actions.createPage({
+			path: page.path,
+			component: require.resolve('./src/templates/document-template.js'),
+			context: {
+				pageID: page.id,
+			},
+		});
+	});
+};

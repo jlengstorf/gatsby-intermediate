@@ -2,10 +2,13 @@
 // 3.) >> Renders common theme components and scaffold >>
 
 import {Fragment} from 'react';
+
 import {jsx} from 'theme-ui';
+import {Global} from '@emotion/core';
 
 const ThemeLayout = ({children}) => (
 	<Fragment>
+		<Global styles={{body: {margin: 0}}} />
 		<header
 			sx={{bg: 'primary', color: 'background', fontFamily: 'heading', p: 3}}
 		>

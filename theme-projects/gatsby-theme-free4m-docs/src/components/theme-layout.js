@@ -6,8 +6,12 @@ import {jsx} from 'theme-ui';
 
 const ThemeLayout = ({children}) => (
 	<Fragment>
-		<header>GATSBY THEME FREE4M DOCS</header>
-		<main>{children}</main>
+		<header
+			sx={{bg: 'primary', color: 'background', fontFamily: 'heading', p: 3}}
+		>
+			GATSBY THEME FREE4M DOCS
+		</header>
+		<main sx={{mx: 'auto', maxWidth: 650, width: '90vw'}}>{children}</main>
 	</Fragment>
 );
 

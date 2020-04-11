@@ -19,9 +19,9 @@ const TableOfContents = () => {
 
 	return (
 		<div>
-			<h2></h2>
+			<h2>Table of Contents</h2>
 			<ul>
-				{pages.map((id, path, title) => {
+				{pages.map(({id, path, title}) => (
 					<li key={id}>
 						<Link
 							to={path}
@@ -36,8 +36,8 @@ const TableOfContents = () => {
 						>
 							{title}
 						</Link>
-					</li>;
-				})}
+					</li>
+				))}
 			</ul>
 		</div>
 	);

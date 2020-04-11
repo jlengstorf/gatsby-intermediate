@@ -15,6 +15,8 @@
 		"gatsby-plugin-mdx": "^1.1.4",
 		"gatsby-plugin-theme-ui": "^0.3.0",
 		"gatsby-source-filesystem": "^2.2.2",
+		"mdx-utils": "^0.2.0",
+		"prism-react-renderer": "^1.0.2",
 		"theme-ui": "^0.3.1"
 	}
 }

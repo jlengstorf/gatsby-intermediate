@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const withDefaults = require('./utils/default-options');
 
 module.exports = (options) => {
